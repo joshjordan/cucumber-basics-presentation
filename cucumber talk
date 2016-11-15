@@ -153,3 +153,46 @@ Scenario Outline: feeding a suckler cow
 Language
 
 What language? Any. Or many (although then you can't share steps). But, try JS if you are dealing purely with APIs. Javascript speaks JSON natively.
+
+Step Definitions
+
+Just code!
+(demo)
+
+Why Cucumber?
+
+Involving non-technical stakeholders
+
+Did you notice that the features I wrote were completely human readable, and I abstracted away the details of how to execute them?
+* Means non-technical stakeholders can (not should, just can) be involved
+* Can divorce feature/scenario writing from implementation
+* Clean path to incrementally raising the level of abstraction
+
+How does this fit into your lifecycle?
+* Basic workflow: dev only. Dev writes code, dev tests code with Cucumber.
+* Basic+: Dev writes test, dev writes minimum code to implement, dev refactors code.
+* QA & Dev: QA writes features/scenarios, dev writes tests to fulfill.
+^ Dev builds a library of tests for QA to use and eventually QA can write tests that don't need step implementations
+* PO -> QA -> Dev
+^ alignment around acceptance criteria. living documentation that proves your feature set. no one ever asks you "how does this work again?"
+
+When to Cuke
+
+My personal opinion: anytime you need to test the user's perspective. Without building deep hooks into your stack, these tests exist at the level of the interface that you expose. This is the same level a user/client sees. We often test individual systems (up to the service level), but end-to-end integration testing is hard.
+
+* API integration testing
+* Web application testing
+* Mobile device testing
+
+When Not to Cuke
+
+My personal opinion: When you need to test internals. You end up managing a lot of state that I think is better accomplished with tools made to go in that deep. However, Cucumber is just code and it is doable.
+
+A word on APIs as products
+
+API products are not just APIs.
+* Documentation
+* A portal that may have custom-built functionality
+* Interactive consoles swagger
+
+^ test that your documentation at least exists. Browser testing against swagger to prove your console works. Have a user actually "sign up" through your portal, and then make an API call.
