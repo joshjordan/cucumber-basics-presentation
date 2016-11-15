@@ -167,6 +167,7 @@ Did you notice that the features I wrote were completely human readable, and I a
 * Means non-technical stakeholders can (not should, just can) be involved
 * Can divorce feature/scenario writing from implementation
 * Clean path to incrementally raising the level of abstraction
+* Living, breathing documentation that (should) always be in sync with reality
 
 How does this fit into your lifecycle?
 * Basic workflow: dev only. Dev writes code, dev tests code with Cucumber.
@@ -175,6 +176,13 @@ How does this fit into your lifecycle?
 ^ Dev builds a library of tests for QA to use and eventually QA can write tests that don't need step implementations
 * PO -> QA -> Dev
 ^ alignment around acceptance criteria. living documentation that proves your feature set. no one ever asks you "how does this work again?"
+
+Going further
+* Cucumber as part of continuous integration
+* Cucumber as a gating factor for continuous deployment
+* Cucumber running periodically against an integration environment
+^ Catches bugs in data. We have this problem all the time. Catches transient failures in the lieu of better alarms.
+* Experimental: build exploratory "users" that persist data between runs to effectively mutate test scenarios
 
 When to Cuke
 
@@ -196,3 +204,23 @@ API products are not just APIs.
 * Interactive consoles swagger
 
 ^ test that your documentation at least exists. Browser testing against swagger to prove your console works. Have a user actually "sign up" through your portal, and then make an API call.
+
+Think like a client - what might they do?
+
+^ Probably exactly what you tell them to do. Did you test that?
+
+Resources
+
+Cucumber
+* Cucumber documentation https://cucumber.io/docs/reference
+* Cucumber wiki https://github.com/cucumber/cucumber/wiki
+Implementations
+* C#: SpecFlow http://www.specflow.org/
+* http://www.slideshare.net/ask4answers/rest-api-testing-with-specflow
+* Cucumber.js https://github.com/cucumber/cucumber-js
+API Testing
+* https://github.com/apickli/apickli
+* https://github.com/jayzes/cucumber-api-steps
+BDD
+* BDD & Cucumber (first half only) http://www2.smartbear.com/rs/800-TIV-782/images/Achieving%20API%20Agility%20with%20BDD%20and%20CI.pdf
+* BDD for APIs http://www.slideshare.net/JasonHarmon1/bdd-for-apis
