@@ -1,0 +1,41 @@
+unit testing, integration testing, TDD, BDD
+how does it fit into CI, CD (continuous delivery vs continuous deployment)?
+
+choose level of isolation testing:
+local/inprocess
+throwaway environment
+fully integrated system
+
+just a test language. you can write anything in it. if NUnit or karma or mocha or rspec or unittest can do it, so can cucumber. its just a test driver.
+
+gherkin:
+basics
+regexs
+tables
+tags - group and change behavior. could use for jwts for each persona, but i prefer to just use explicit steps. could be used to mock services, change their configuration (throwaway), or change global behavior (e.g. error handling - most API calls return a throttling header and we test that, but for a very specific one, we don’t)
+
+
+
+what language? ANY! or many. but try JS if you are dealing with client side apis
+
+step definitions
+regex
+reusability
+
+involving non-technical
+divorcing feature/scenario writing from implementation
+incrementally raising the level of abstraction
+how does this fit into your lifecycle?
+PO -> QA -> Dev?
+QA only?
+Dev only?
+
+when to cuke
+when NOT to cuke
+
+API productss are not just APIs. they have documentation, we have a portal that may have custom-built functionality, they have swagger.
+browser testing against swagger
+
+think like a client - what might they do? well, probably exactly what you tell them to do.
+
+additional: get a thing that lets you find steps by regex or navigate from scenarios to steps
