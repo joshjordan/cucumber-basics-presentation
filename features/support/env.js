@@ -1,1 +1,1 @@
-exports.BASE_URL = "https://api.github.com"
+exports.BASE_URL = "http://api.brewerydb.com/v2/"

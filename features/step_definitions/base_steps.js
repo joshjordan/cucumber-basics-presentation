@@ -6,7 +6,7 @@ var jsonPath = require('JSONPath').eval;
 /* jshint +W061 */
 var url = require('url')
 
-var GithubStepsWrapper = function () {
+var BaseStepsWrapper = function () {
 
   this.World = require('../support/world.js').World
 
@@ -153,4 +153,4 @@ var GithubStepsWrapper = function () {
   }
 }
 
-module.exports = GithubStepsWrapper
+module.exports = BaseStepsWrapper
